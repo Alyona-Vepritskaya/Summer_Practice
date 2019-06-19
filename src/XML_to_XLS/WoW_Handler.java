@@ -35,7 +35,6 @@ public class WoW_Handler extends DefaultHandler {
     WoW_Handler() {
         super();
     }
-
     /**
      * Method returns the list of lessons
      *
