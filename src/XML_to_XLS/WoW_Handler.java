@@ -4,23 +4,53 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Class implements the methods in order to work with the specific XML file
+ */
 public class WoW_Handler extends DefaultHandler {
-    private ArrayList<Lesson> lessons = new ArrayList<>();
-    private ArrayList<String> groups = new ArrayList<>();
-    private ArrayList<String> tutors = new ArrayList<>();
-    private ArrayList<String> flats = new ArrayList<>();
+    /**
+     * Contains a list of every lessons in xml file
+     */
+    private List<Lesson> lessons = new ArrayList<>();
+    /**
+     * Contains a list groups  of every lessons in xml file
+     */
+    private List<String> groups = new ArrayList<>();
+    /**
+     * Contains a list tutors  of every lessons in xml file
+     */
+    private List<String> tutors = new ArrayList<>();
+    /**
+     * Contains a list flats  of every lessons in xml file
+     */
+    private List<String> flats = new ArrayList<>();
+    /**
+     * Current lesson
+     */
     private Lesson lesson = new Lesson();
 
     WoW_Handler() {
         super();
     }
 
+    /**
+     * Method returns the list of lessons
+     *
+     * @return list of lessons
+     */
     public List<Lesson> getLessons() {
         return lessons;
     }
 
+    /**
+     * Set values in the current lesson , depending on the element name
+     * Method calls when element is started
+     * @param qName - name of the element
+     * @param attributes - value of the attribute
+     */
     private void setValue(String qName, Attributes attributes) {
         switch (qName) {
             case "Cycle": {
@@ -63,15 +93,20 @@ public class WoW_Handler extends DefaultHandler {
         }
     }
 
+    /**
+     * Add the values in the lists
+     * Method calls in the end of the element
+     * @param qName - name of the element
+     */
     private void checkAndAdd(String qName) {
         if (qName.equals("Groups")) {
-            lesson.setGroups(groups);
+            lesson.setGroups((ArrayList<String>) groups);
         }
         if (qName.equals("Tutors")) {
-            lesson.setTutors(tutors);
+            lesson.setTutors((ArrayList<String>) tutors);
         }
         if (qName.equals("Flats")) {
-            lesson.setFlats(flats);
+            lesson.setFlats((ArrayList<String>)flats);
         }
         if (qName.equals("Lesson")) {
             lessons.add(lesson);
@@ -83,7 +118,8 @@ public class WoW_Handler extends DefaultHandler {
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        super.startElement(uri, localName, qName, attributes);
         setValue(qName, attributes);
     }
 
