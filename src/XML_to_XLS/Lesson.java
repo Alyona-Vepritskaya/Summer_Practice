@@ -1,17 +1,46 @@
 package XML_to_XLS;
 
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Class contains  data of any lesson
+ */
 public class Lesson {
-
+    /**
+     * List of groups
+     */
     private ArrayList<String> Groups;
+    /**
+     * List of tutors
+     */
     private ArrayList<String> Tutors;
+    /**
+     * List of flats
+     */
     private ArrayList<String> Flats;
+    /**
+     * Contains current schedule value
+     * and index
+     */
     private Cycle Cycle;
+    /**
+     * Contains day of week
+     * and index
+     */
     private Day Day;
+    /**
+     * Contains number of pairs
+     * and index
+     */
     private Pair Pair;
+    /**
+     * Name of subject
+     */
     private String Subject;
+    /**
+     * Type of subject
+     * practice or lecture
+     */
     private String SubjectType;
 
     public Lesson() {

@@ -1,9 +1,17 @@
 package XML_to_XLS;
 
+/**
+ * Class contains number of pairs
+ * and index
+ */
 public class Pair {
-
+    /**
+     * Number of pairs
+     */
     private String Text;
-
+    /**
+     * Index
+     */
     private int Index;
 
     public Pair() {

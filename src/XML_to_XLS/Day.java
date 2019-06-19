@@ -1,9 +1,17 @@
 package XML_to_XLS;
 
+/**
+ * Class contains day of week
+ * and index
+ */
 public class Day {
-
+    /**
+     * Name of the day of the week
+     */
     private String Text;
-
+    /**
+     * Index
+     */
     private int Index;
 
     public Day() {
