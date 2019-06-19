@@ -15,7 +15,7 @@ public class Work {
 
     public static void main(String[] args) throws Exception {
 
-        // Workbook wb = new HSSFWorkbook();
+
         WoW_Handler handler = new WoW_Handler();
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser saxParser = saxParserFactory.newSAXParser();

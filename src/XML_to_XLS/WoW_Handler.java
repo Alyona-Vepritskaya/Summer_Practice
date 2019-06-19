@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class WoW_Handler extends DefaultHandler {
     /**
-     * Contains a list of every lessons in xml file
+     * Contains a list of every lessons in XML file
      */
     private List<Lesson> lessons = new ArrayList<>();
     /**
