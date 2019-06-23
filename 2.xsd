@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+    <xs:element name="Lessons" type="LessonsType"/>
+    <xs:complexType name="CycleType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Index" use="optional"/>
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="DayType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Index" use="optional"/>
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="PairType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Index" use="optional"/>
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="SubjectType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="SubjectTypeType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GroupType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="GroupsType">
+        <xs:sequence>
+            <xs:element type="GroupType" name="Group" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LessonType">
+        <xs:sequence>
+            <xs:element type="CycleType" name="Cycle"/>
+            <xs:element type="DayType" name="Day"/>
+            <xs:element type="PairType" name="Pair"/>
+            <xs:element type="SubjectType" name="Subject"/>
+            <xs:element type="SubjectTypeType" name="SubjectType"/>
+            <xs:element type="GroupsType" name="Groups"/>
+            <xs:element name="Flats">
+                <xs:complexType mixed="true">
+                    <xs:sequence>
+                        <xs:element type="FlatType" name="Flat" maxOccurs="unbounded" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Tutors">
+                <xs:complexType mixed="true">
+                    <xs:sequence>
+                        <xs:element type="TutorType" name="Tutor" maxOccurs="unbounded" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FlatType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="FlatsType">
+        <xs:sequence>
+            <xs:element type="FlatType" name="Flat" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TutorType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Text" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="TutorsType">
+        <xs:sequence>
+            <xs:element type="TutorType" name="Tutor" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LessonsType">
+        <xs:sequence>
+            <xs:element type="LessonType" name="Lesson" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
