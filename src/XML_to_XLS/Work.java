@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Work {
 
-    private static String[] columns = {"№", "Groups", "Subject", "Tutor(s)", "SubjectType", "Day", "З/Ч", "№ of pair"};
+    private static String[] columns = {"№", "Groups", "Subject", "Tutor(s)", "SubjectType", "Day", "З/Ч", "Pair"};
 
     public static void main(String[] args) {
         try {
