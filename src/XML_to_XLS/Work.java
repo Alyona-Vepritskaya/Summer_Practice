@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Work {
 
-    private static String[] columns = {"№", "Groups", "Subject", "Tutor(s)", "SubjectType", "Day", "З/Ч", "Pair"};
+    private static String[] columns_names = {"№", "Groups", "Subject", "Tutor(s)", "SubjectType", "Day", "З/Ч", "Pair"};
 
     public static void main(String[] args) {
         try {
@@ -35,9 +35,9 @@ public class Work {
             headerCellStyle.setFont(headerFont);
             // Create a Row
             Row headerRow = sheet.createRow(0);
-            for (int i = 0; i < columns.length; i++) {
+            for (int i = 0; i < columns_names.length; i++) {
                 Cell cell = headerRow.createCell(i);
-                cell.setCellValue(columns[i]);
+                cell.setCellValue(columns_names[i]);
                 cell.setCellStyle(headerCellStyle);
             }
             // Create Other rows and cells with contacts data
@@ -53,8 +53,8 @@ public class Work {
                 row.createCell(6).setCellValue(l.getCycle().getText());
                 row.createCell(7).setCellValue(l.getPair().getText());
             }
-            // Resize all columns to fit the content size
-            for (int i = 0; i < columns.length; i++) {
+            // Resize all columns_names to fit the content size
+            for (int i = 0; i < columns_names.length; i++) {
                 sheet.autoSizeColumn(i);
                 sheet.autoSizeColumn(i, true);
             }
